@@ -138,7 +138,7 @@
             display: flex;
             align-items: center;
             background: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), 
-                        url('background.jpg') no-repeat center center/cover;
+                        url('images/background.jpg') no-repeat center center/cover;
             color: white;
             padding-top: 80px;
         }
@@ -518,6 +518,77 @@
             display: block;
         }
         
+        /* Combo Card Styles */
+        .combo-card {
+            border: 2px dashed var(--gold);
+            animation: pulseBorder 2s infinite;
+            position: relative;
+            overflow: visible;
+        }
+
+        .combo-card:before {
+            content: "BEST VALUE";
+            position: absolute;
+            top: -10px;
+            right: 15px;
+            background: var(--gold);
+            color: white;
+            padding: 3px 10px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            border-radius: 20px;
+            z-index: 2;
+        }
+
+        @keyframes pulseBorder {
+            0% { border-color: var(--gold); }
+            50% { border-color: var(--taupe); }
+            100% { border-color: var(--gold); }
+        }
+
+        .combo-select {
+            background-color: white;
+            color: var(--charcoal);
+            font-family: 'Montserrat', sans-serif;
+            border-radius: 4px;
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 8px;
+            border: 1px solid var(--smoke);
+        }
+
+        .combo-select option {
+            padding: 8px;
+            background: var(--ivory);
+        }
+
+        .combo-options {
+            margin: 15px 0;
+            font-size: 0.9rem;
+        }
+
+        .combo-options p {
+            color: var(--gold);
+            margin-bottom: 8px;
+        }
+
+        .combo-card .add-to-cart {
+            background-color: var(--gold);
+            color: white;
+            border: none;
+        }
+
+        .combo-card .add-to-cart:hover {
+            background-color: #b59465;
+        }
+
+        @media (max-width: 768px) {
+            .combo-card:before {
+                right: 50%;
+                transform: translateX(50%);
+            }
+        }
+        
         /* Responsive */
         @media (max-width: 768px) {
             .header-container {
@@ -596,12 +667,12 @@
                 <!-- Product 1 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71YHjVXyR0L._SL1500_.jpg" alt="Lavender Dreams Candle">
+                        <img src="images/lavender-serenity.jpg" alt="Lavender Serenity Candle">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Lavender Dreams</h3>
+                        <h3 class="product-title">Lavender Serenity</h3>
                         <div class="product-category">Calming</div>
-                        <div class="product-price">₹399</div>
+                        <div class="product-price">₹65</div>
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
@@ -609,12 +680,12 @@
                 <!-- Product 2 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71q3s+7XJVL._SL1500_.jpg" alt="Ocean Breeze Candle">
+                        <img src="images/lemongrass-zephyr.jpg" alt="Lemongrass Zephyr Candle">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Ocean Breeze</h3>
+                        <h3 class="product-title">Lemongrass Zephyr</h3>
                         <div class="product-category">Refreshing</div>
-                        <div class="product-price">₹299</div>
+                        <div class="product-price">₹65</div>
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
@@ -622,12 +693,12 @@
                 <!-- Product 3 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71Y1VdXUwVL._SL1500_.jpg" alt="Vanilla Comfort Candle">
+                        <img src="images/vanilla-embrace.jpg" alt="Vanilla Embrace Candle">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title">Vanilla Comfort</h3>
+                        <h3 class="product-title">Vanilla Embrace</h3>
                         <div class="product-category">Warming</div>
-                        <div class="product-price">299</div>
+                        <div class="product-price">₹65</div>
                         <button class="add-to-cart">Add to Cart</button>
                     </div>
                 </div>
@@ -635,13 +706,70 @@
                 <!-- Product 4 -->
                 <div class="product-card">
                     <div class="product-image">
-                        <img src="https://m.media-amazon.com/images/I/71wZb1mUJTL._SL1500_.jpg" alt="Citrus Sunrise Candle">
+                        <img src="images/citrus-sunrise.jpg" alt="Citrus Sunrise Candle">
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Citrus Sunrise</h3>
                         <div class="product-category">Energizing</div>
-                        <div class="product-price">₹299</div>
+                        <div class="product-price">₹65</div>
                         <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Product 5 - Orchard Mist -->
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="images/orchard-mist.jpg" alt="Orchard Mist Candle">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Orchard Mist</h3>
+                        <div class="product-category">Fruity</div>
+                        <div class="product-price">₹65</div>
+                        <button class="add-to-cart">Add to Cart</button>
+                    </div>
+                </div>
+                
+                <!-- Combo Customizer Option -->
+                <div class="product-card combo-card">
+                    <div class="product-image" style="background-color: var(--gold);">
+                        <i class="fas fa-gift" style="font-size: 3rem; color: var(--ivory);"></i>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-title">Create Your Combo</h3>
+                        <div class="product-category">3-Custom Candles</div>
+                        <div class="product-price">₹165 <span style="text-decoration: line-through; color: var(--taupe); font-size: 0.9rem;">₹195</span></div>
+                        
+                        <div class="combo-options">
+                            <p style="color: var(--gold); margin-bottom: 8px;"><i class="fas fa-star"></i> Save 15% on sets</p>
+                            <select class="combo-select">
+                                <option>Select Scent 1</option>
+                                <option>Lavender Serenity</option>
+                                <option>Lemongrass Zephyr</option>
+                                <option>Vanilla Embrace</option>
+                                <option>Citrus Sunrise</option>
+                                <option>Orchard Mist</option>
+                            </select>
+                            <select class="combo-select">
+                                <option>Select Scent 2</option>
+                                <option>Lavender Serenity</option>
+                                <option>Lemongrass Zephyr</option>
+                                <option>Vanilla Embrace</option>
+                                <option>Citrus Sunrise</option>
+                                <option>Orchard Mist</option>
+                            </select>
+                            <select class="combo-select">
+                                <option>Select Scent 3</option>
+                                <option>Lavender Serenity</option>
+                                <option>Lemongrass Zephyr</option>
+                                <option>Vanilla Embrace</option>
+                                <option>Citrus Sunrise</option>
+                                <option>Orchard Mist</option>
+                            </select>
+                        </div>
+                        
+                        <button class="add-to-cart combo-add-to-cart">
+                            <i class="fas fa-shopping-basket"></i> Add Combo
+                        </button>
                     </div>
                 </div>
             </div>
@@ -655,7 +783,7 @@
                 <div class="about-text">
                     <h2>The Art of Fragrance</h2>
                     <p>At Lume, we believe in the transformative power of scent. Each candle is hand-poured in small batches using the finest natural ingredients, ensuring a clean burn and exceptional fragrance throw.</p>
-                    <p>Our founder, a master perfumer with over 20 years of experience, personally crafts each scent to evoke memories, emotions, and a sense of place.</p>
+                    <p>Every fragrance begins with a story - whether it's the crisp morning dew in a rose garden or the earthy warmth of a forest after rain, our scents transport you to cherished moments.</p>
                     <p>"Where fragrance meets flame" isn't just our tagline - it's our philosophy. We combine the art of perfumery with the craftsmanship of candle making to create products that engage all the senses.</p>
                     <a href="#" class="btn" style="color: var(--charcoal); border-color: var(--charcoal); margin-top: 20px;">Our Story</a>
                 </div>
@@ -682,8 +810,8 @@
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> BSACIST, Vandalur, Chennai</li>
-                        <li><i class="fas fa-phone" style="margin-right: 8px;"></i> +91 8610491678</li>
+                        <li><i class="fas fa-map-marker-alt" style="margin-right: 8px;"></i> 123 Fragrance Lane, Chennai</li>
+                        <li><i class="fas fa-phone" style="margin-right: 8px;"></i> +91 9876543210</li>
                         <li><i class="fas fa-envelope" style="margin-right: 8px;"></i> hello@lumecandles.com</li>
                     </ul>
                 </div>
@@ -736,7 +864,8 @@
         const closeCart = document.getElementById('close-cart');
         const cartSidebar = document.getElementById('cart-sidebar');
         const overlay = document.getElementById('overlay');
-        const addToCartButtons = document.querySelectorAll('.add-to-cart');
+        const addToCartButtons = document.querySelectorAll('.add-to-cart:not(.combo-add-to-cart)');
+        const comboAddToCartButton = document.querySelector('.combo-add-to-cart');
         const cartItemsContainer = document.getElementById('cart-items-container');
         const cartCount = document.querySelector('.cart-count');
         const cartTotalCount = document.getElementById('cart-total-count');
@@ -761,7 +890,7 @@
             overlay.classList.remove('active');
         });
         
-        // Add to cart functionality
+        // Add to cart functionality for regular products
         addToCartButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const productCard = button.closest('.product-card');
@@ -779,7 +908,8 @@
                         name: productName,
                         price: productPrice,
                         image: productImage,
-                        quantity: 1
+                        quantity: 1,
+                        isCombo: false
                     });
                 }
                 
@@ -788,6 +918,49 @@
                 // Show cart
                 cartSidebar.classList.add('active');
                 overlay.classList.add('active');
+            });
+        });
+        
+        // Add to cart functionality for combo
+        comboAddToCartButton.addEventListener('click', () => {
+            const comboSelects = document.querySelectorAll('.combo-select');
+            const selectedScents = Array.from(comboSelects)
+                .map(select => select.value)
+                .filter(value => !value.startsWith('Select'));
+            
+            if (selectedScents.length !== 3) {
+                alert('Please select 3 different scents for your combo');
+                return;
+            }
+            
+            // Check for duplicate selections
+            if (new Set(selectedScents).size !== selectedScents.length) {
+                alert('Please select 3 different scents for your combo');
+                return;
+            }
+            
+            const comboPrice = 1799;
+            const comboName = `Custom Combo: ${selectedScents.join(', ')}`;
+            
+            // Add combo to cart
+            cart.push({
+                name: comboName,
+                price: comboPrice,
+                image: '', // No image for combo
+                quantity: 1,
+                isCombo: true,
+                scents: selectedScents
+            });
+            
+            updateCart();
+            
+            // Show cart
+            cartSidebar.classList.add('active');
+            overlay.classList.add('active');
+            
+            // Reset selections
+            comboSelects.forEach(select => {
+                select.selectedIndex = 0;
             });
         });
         
@@ -816,10 +989,14 @@
                     cartHTML += `
                         <div class="cart-item">
                             <div class="cart-item-image">
-                                <img src="${item.image}" alt="${item.name}">
+                                ${item.isCombo ? 
+                                    '<i class="fas fa-gift" style="font-size: 2rem; color: var(--gold);"></i>' : 
+                                    `<img src="${item.image}" alt="${item.name}">`}
                             </div>
                             <div class="cart-item-details">
                                 <div class="cart-item-title">${item.name}</div>
+                                ${item.isCombo ? 
+                                    `<div class="product-category">Combo Pack</div>` : ''}
                                 <div class="cart-item-price">₹${item.price.toFixed(2)}</div>
                                 <div class="cart-item-actions">
                                     <div class="quantity-control">
